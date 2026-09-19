@@ -1,0 +1,5 @@
+import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
+
+const steps = [["01", "Chegar", "Deixe o mundo lá fora. Um chá, uma conversa e o tempo começa a mudar."], ["02", "Sentir", "Escutamos seu corpo e personalizamos cada escolha da experiência."], ["03", "Receber", "Toques, aromas e temperaturas conduzem você a um relaxamento profundo."], ["04", "Permanecer", "Sem pressa para ir. Um último respiro para levar a sensação com você."]];
+export default function Ritual() { return <section id="ritual" className="ritual section-pad"><div className="shell ritual-grid"><Reveal className="ritual-image"><Image src="/images/brava/ritual.png" alt="Ritual de boas-vindas do Brava Spa" fill sizes="(max-width: 800px) 92vw, 42vw" className="cover"/><div className="ritual-quote">aqui, o tempo<br/><em>é seu</em></div></Reveal><div className="ritual-content"><Reveal><p className="eyebrow eyebrow--gold"><span/> Sua jornada</p><h2>Mais que uma sessão.<br/>Um <em>ritual.</em></h2></Reveal><div className="steps">{steps.map(([n,t,d], i) => <Reveal key={n} delay={i*80} className="step"><span>{n}</span><h3>{t}</h3><p>{d}</p></Reveal>)}</div></div></div></section>; }
